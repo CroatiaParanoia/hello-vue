@@ -47,10 +47,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    change: {
-      type: Array,
-      default: () => [],
-    },
   },
   data() {
     const innerOptions =
@@ -70,8 +66,6 @@ export default {
       } else {
         this.setBoxItemActive(value);
       }
-
-      console.log(this.$parent, this.$container);
     },
 
     setBoxItemActive(value) {
@@ -126,7 +120,7 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
+<style  scoped>
 .selector-title {
   margin-bottom: 10px;
 }

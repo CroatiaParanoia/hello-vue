@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <SelectorContainer v-model="form">
-      <Selector value-key="demo1" />
+      <Selector value-key="demo1" :multiply="false" />
       <Selector value-key="demo2" />
       form: {{ form }}
       <div @click="form = {}">RESET form</div>
