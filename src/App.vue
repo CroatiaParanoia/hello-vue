@@ -1,19 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SelectorContainer v-model="form">
+      <Selector value-key="demo1" />
+      <Selector value-key="demo2" />
+      form: {{ form }}
+      <div @click="form = {}">RESET form</div>
+    </SelectorContainer>
+
+    <Selector v-model="selectedValues" />
+    selectedValues: {{ selectedValues }}
+    <div @click="selectedValues = []">RESET selectedValues</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import SelectorContainer from "./components/Selector/SelectorContainer";
+import Selector from "./components/Selector/Selector";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    SelectorContainer,
+    Selector,
+  },
+  data() {
+    return {
+      selectedValues: [],
+      form: {},
+    };
+  },
+  methods: {},
+};
 </script>
 
 <style>
